@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Digital Love Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+  <div id="grain"></div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div id="particle-container"></div>
+
+  <!-- Music Player -->
+  <div id="music-player">
+    <span id="music-tooltip">play our song?</span>
+    <button id="music-toggle" aria-label="Toggle Music">
+      <svg id="icon-play" viewBox="0 0 24 24" fill="currentColor" class="music-icon">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      <svg id="icon-pause" viewBox="0 0 24 24" fill="currentColor" class="music-icon hidden">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+      </svg>
+    </button>
+    <audio id="bg-music" loop>
+      <source src="/public/assets/audio/Lord Huron - The Night We Met (Official Audio).mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Scrolling Heart -->
+  <div id="scroll-heart">
+    <svg viewBox="0 0 32 29.6" fill="currentColor">
+      <path
+        d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+    </svg>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════ HERO ══ -->
+    <section id="hero" class="panel">
+
+      <!-- Giant decorative background letter -->
+      <div class="hero-bg-letter" aria-hidden="true">♡</div>
+
+      <!-- Floating petal shapes -->
+      <div class="petal petal-1"></div>
+      <div class="petal petal-2"></div>
+      <div class="petal petal-3"></div>
+      <div class="petal petal-4"></div>
+      <div class="petal petal-5"></div>
+      <div class="petal petal-6"></div>
+
+      <!-- Radial spotlight -->
+      <div class="hero-spotlight"></div>
+
+      <!-- Decorative corner flourishes -->
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+
+      <div class="hero-content">
+        <p class="hero-tag reveal-1">✦ &nbsp; a love letter &nbsp; ✦</p>
+
+        <div class="title-block">
+          <span class="title-for reveal-2">For</span>
+          <h1 class="title reveal-3">You</h1>
+        </div>
+
+        <div class="hero-divider reveal-4">
+          <span class="divider-line"></span>
+          <svg class="divider-heart" viewBox="0 0 32 29.6" fill="currentColor">
+            <path
+              d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+          </svg>
+          <span class="divider-line"></span>
+        </div>
+
+        <p class="subtitle reveal-5">Scroll slowly, my love.</p>
+
+        <div class="scroll-cue reveal-6">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════ SECTION I ══ -->
+    <section id="quote-section" class="panel">
+      <div class="section-label">I</div>
+      <div class="content-wrapper">
+        <p class="section-heading">words i mean</p>
+        <button id="btn-quote" class="elegant-btn">
+          <span>Reveal a message</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </button>
+        <div id="quote-display" class="glass-card hidden">
+          <div class="quote-mark">"</div>
+          <p class="quote-text"></p>
+          <div class="quote-mark quote-mark-close">"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════ SECTION II ══ -->
+    <section id="memory-section" class="panel">
+      <div class="section-label">II</div>
+      <div class="content-wrapper">
+        <p class="section-heading">our moments</p>
+        <button id="btn-memory" class="elegant-btn">
+          <span>Open a memory</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </button>
+        <div id="memory-display" class="polaroid hidden">
+          <div class="polaroid-frame">
+            <img id="memory-img" src="" alt="A memory of us">
+            <div class="polaroid-tape"></div>
+          </div>
+          <p class="polaroid-caption">a beautiful moment</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════ TIMELINE ══ -->
+    <section id="timeline-section" class="panel timeline-panel">
+      <div class="section-label">III</div>
+      <div class="timeline-wrapper">
+        <p class="section-heading">our story</p>
+        <h2 class="timeline-title">Our Timeline</h2>
+        <div class="timeline-track">
+          <div class="timeline-line"></div>
+          <div id="timeline-events"></div>
+        </div>
+      </div>
+    </section>
+    <!-- ══════════════════════════════ OUR TIME ══ -->
+    <section id="time-section" class="panel">
+      <div class="section-label">IV</div>
+
+      <div class="time-wrapper">
+        <p class="section-heading">our time together</p>
+        <h2 class="time-title">Every Moment With You</h2>
+
+        <div class="time-grid">
+
+          <div class="time-unit">
+            <div class="time-number-wrap">
+              <span class="time-heart">♥</span>
+              <span class="time-number" id="t-years">0</span>
+            </div>
+            <p class="time-label">years</p>
+          </div>
+
+          <div class="time-unit">
+            <div class="time-number-wrap">
+              <span class="time-heart">♥</span>
+              <span class="time-number" id="t-months">0</span>
+            </div>
+            <p class="time-label">months</p>
+          </div>
+
+          <div class="time-unit">
+            <div class="time-number-wrap">
+              <span class="time-heart">♥</span>
+              <span class="time-number" id="t-days">0</span>
+            </div>
+            <p class="time-label">days</p>
+          </div>
+
+          <div class="time-unit">
+            <div class="time-number-wrap">
+              <span class="time-heart">♥</span>
+              <span class="time-number" id="t-hours">0</span>
+            </div>
+            <p class="time-label">hours</p>
+          </div>
+
+          <div class="time-unit">
+            <div class="time-number-wrap">
+              <span class="time-heart">♥</span>
+              <span class="time-number" id="t-minutes">0</span>
+            </div>
+            <p class="time-label">minutes</p>
+          </div>
+
+          <div class="time-unit">
+            <div class="time-number-wrap">
+              <span class="time-heart">♥</span>
+              <span class="time-number" id="t-seconds">0</span>
+            </div>
+            <p class="time-label">seconds</p>
+          </div>
+
+        </div>
+
+        <p class="time-caption">And every second with you is my favorite one.</p>
+
+      </div>
+
+      <!-- Floating background hearts -->
+      <div class="time-bg-hearts" id="time-bg-hearts"></div>
+
+    </section>
+    <!-- ════════════════════════════════ SECTION IV ══ -->
+    <section id="final-section" class="panel">
+      <div class="section-label">III</div>
+      <div class="final-content">
+        <p class="section-heading">always</p>
+        <button id="btn-final" class="elegant-btn">
+          <span>One last thing</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </button>
+        <div id="final-message-container" class="hidden">
+          <div id="final-heart-cluster"></div>
+          <div id="big-heart" class="hidden">
+            <svg viewBox="0 0 32 29.6" fill="url(#purpleGrad)">
+              <defs>
+                <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#b388ff" />
+                  <stop offset="50%" style="stop-color:#e0c3fc" />
+                  <stop offset="100%" style="stop-color:#b388ff" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <h2 class="final-text">You are my favorite place in the universe.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
